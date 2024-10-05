@@ -15,14 +15,14 @@ void intercambiar(Lista<int> &lista1, int &tamanio1,Lista<int> &lista2, int &tam
     int tamanioAux = tamanio1;
 
     for(int i=0; i<tamanio1; i++){
-        aux.insertarUltimo(lista1.getDato(i)); // Inserto el valor en la lista auxiliar
+        aux.insertarUltimo(lista1.getDato(i)); // Inserto el valor de lista 1 en la lista auxiliar
     }
 
     lista1.vaciar();
     tamanio1 = 0;
 
     for(int i=0; i<tamanio2; i++){
-        lista1.insertarUltimo(lista2.getDato(i)); // Inserto el valor en la lista 1
+        lista1.insertarUltimo(lista2.getDato(i)); // Inserto el valor lista 2 en la lista 1
         tamanio1++;
     }
 
@@ -30,7 +30,7 @@ void intercambiar(Lista<int> &lista1, int &tamanio1,Lista<int> &lista2, int &tam
     tamanio2 = 0;
 
     for(int i=0; i<tamanioAux; i++){
-        lista2.insertarUltimo(aux.getDato(i)); // Inserto el valor en la lista 2
+        lista2.insertarUltimo(aux.getDato(i)); // Inserto el valor lista aux (lista 1) en la lista 2
         tamanio2++;
     }
 }

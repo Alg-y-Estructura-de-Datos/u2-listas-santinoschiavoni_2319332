@@ -109,6 +109,20 @@ void eliminarEstudiantePorNombre(ListaDoble<Estudiante>& lista, const string& no
 void contarEstudiantes(const ListaDoble<Estudiante>& lista) {
     cout << "Numero de estudiantes: " << lista.getTamanio() << endl;
 }
+
+// Buscar Estudiante por nombre
+void buscarEstudiante(ListaDoble<Estudiante>& lista){
+    string nombreABuscar;
+    cout << "Ingrese el nombre del estudiante a buscar: ";
+    getline(cin >> ws, nombreABuscar);
+    Estudiante* estudianteEncontrado = buscarEstudiantePorNombre(lista, nombreABuscar);
+    if (estudianteEncontrado) {
+        cout << "Estudiante encontrado: " << *estudianteEncontrado << endl;
+        delete estudianteEncontrado; // Liberar la memoria
+    } else {
+        cout << "Estudiante no encontrado." << endl;
+    }
+}
 int main() {
     ListaDoble<Estudiante> listaEstudiantes;
 
@@ -118,17 +132,8 @@ int main() {
     // Mostrar estudiantes
     mostrarEstudiantes(listaEstudiantes);
 
-    // Buscar un estudiante por nombre
-    string nombreABuscar;
-    cout << "Ingrese el nombre del estudiante a buscar: ";
-    getline(cin >> ws, nombreABuscar);
-    Estudiante* estudianteEncontrado = buscarEstudiantePorNombre(listaEstudiantes, nombreABuscar);
-    if (estudianteEncontrado) {
-        cout << "Estudiante encontrado: " << *estudianteEncontrado << endl;
-        delete estudianteEncontrado; // Liberar la memoria
-    } else {
-        cout << "Estudiante no encontrado." << endl;
-    }
+    // Buscar estudiante
+    buscarEstudiante(listaEstudiantes);
 
     // Eliminar un estudiante por nombre
     string nombreAEliminar;

@@ -1,3 +1,4 @@
+
 /*
 Crear un programa que pida al usuario dar elementos a una Lista de números
  enteros. Luego cree una función que reciba una lista int L1 y devuelva
@@ -41,7 +42,7 @@ Lista<int> encontrarRepetidos(Lista<int>& L1) {
                 }
             }
 
-            // Si es repetido y no está en L2, agregarlo a L2
+            // Si el valor no ha sido visto antes, lo agregamos a la lista de repetidos
             if (!esRepetido) {
                 L2.insertarUltimo(valor);
                 repetidos.insertarUltimo(valor);
